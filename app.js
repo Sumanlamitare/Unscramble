@@ -128,6 +128,11 @@ let currentAttempt = 1;
 
 let word_display = getRandomWord(wordsData);
 
+//create event listener to the input box so it is default on focus
+guessedWord.addEventListener("focus", function () {
+  guessedWord.style.backgroundColor = "white";
+});
+
 //validate input to see if the min length requirement is met
 guessedWord.addEventListener("input", () => {
   if (guessedWord.value.length > 0 && guessedWord.value.length < 4) {
@@ -171,16 +176,19 @@ function submitWord() {
     if (guessedWord.value.toLowerCase() === word_display.word.toLowerCase()) {
       if (currentAttempt === 1) {
         result.textContent = `Correct! You earned 15pts.`;
+        guessedWord.style.backgroundColor = "green";
         result.style.backgroundColor = "limegreen";
         guessContainer.append(result);
         score += 15;
       } else if (currentAttempt === 2) {
         result.textContent = `Correct! You earned 10pts.`;
         result.style.backgroundColor = "limegreen";
+        guessedWord.style.backgroundColor = "green";
         guessContainer.append(result);
         score += 10;
       } else if (currentAttempt === 3) {
         result.textContent = `Correct! You earned 5pts.`;
+        guessedWord.style.backgroundColor = "green";
         result.style.backgroundColor = "limegreen";
         guessContainer.append(result);
         score += 5;
@@ -193,6 +201,7 @@ function submitWord() {
       result.textContent = `Inorrect! Try again`;
       result.style.backgroundColor = "red";
       guessContainer.append(result);
+      guessedWord.style.backgroundColor = "red";
 
       guessedWord.value = "";
       attempts--;
@@ -202,11 +211,13 @@ function submitWord() {
       //show the hint for the user if the user has 1 attempts left
       if (attempts === 1) {
         result.textContent = ` Hint: ${word_display.hint}`;
+        result.style.backgroundColor = "wheat";
         guessContainer.append(result);
       }
 
       if (attempts === 0) {
-        result.textContent = `You have run out of attempts. Click New Word to try another word`;
+        result.textContent = `Out of Attempts. Correct answer: ${word_display.word}`;
+
         result.style.backgroundColor = "red";
         guessContainer.append(result);
       }
@@ -218,12 +229,15 @@ function anotherWord() {
   attempts = 3;
   currentAttempt = 1;
   word_display = getRandomWord(wordsData);
-  playerAttempts.textContent = `Attempts: ${3}`;
+  playerAttempts.textContent = `Attempts: ${attempts}`;
   //   console.log(word_display.scrambled);
   //   console.log(word_display.word);
   scrambledWord.textContent = word_display.scrambled;
   result.textContent = "";
   guessContainer.append(result);
+
+  guessedWord.value = "";
+  guessedWord.style.backgroundColor = "white";
 }
 
 function whenLoaded() {
@@ -232,6 +246,15 @@ function whenLoaded() {
   btns.style.display = "none";
   feedback.style.display = "none";
   guessContainer.style.display = "none";
+}
+
+function reset() {
+  let reset_conf = confirm("Are you sure you would like to reset?");
+  if (reset_conf === true) {
+    alert(`Thank you for playig. Your score was: ${score}`);
+    whenLoaded();
+    startBtn.style.display = "inline-block";
+  }
 }
 
 window.onload = whenLoaded();
