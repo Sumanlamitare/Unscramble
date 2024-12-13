@@ -42,7 +42,7 @@ const wordsData = {
     hint: "Something encoded or in secret form",
   },
   word10: {
-    scrambled: "are od",
+    scrambled: "areod",
     word: "adore",
     hint: "To regard with deep affection or love",
   },
@@ -105,12 +105,17 @@ let playerName = document.querySelector(".name");
 let playerScore = document.querySelector(".score");
 let playerAttempts = document.querySelector(".attempts");
 let startBtn = document.querySelector("#start");
+let instruction = document.querySelector(".instruction");
+let scrambledWord_display = document.querySelector(".scarmbledWordDisplay");
+let btns = document.querySelector(".btns");
+let feedback = document.querySelector(".feedback");
+// let guessContainer = document.querySelector(".guessContainer");
 
 let guessContainer = document.querySelector(".guessContainer");
 
 //Create an element to display hint for the user
-let hintDiv = document.createElement("div");
-hintDiv.classList.add("hint");
+let result = document.createElement("div");
+result.classList.add("result");
 
 //required variables
 let player_name = "player";
@@ -158,17 +163,30 @@ function submitWord() {
   if (attempts > 0) {
     if (guessedWord.value.toLowerCase() === word_display.word.toLowerCase()) {
       if (currentAttempt === 1) {
+        result.textContent = `Correct! You earned 15pts.`;
+        result.style.backgroundColor = "limegreen";
+        guessContainer.append(result);
         score += 15;
       } else if (currentAttempt === 2) {
+        result.textContent = `Correct! You earned 10pts.`;
+        result.style.backgroundColor = "limegreen";
+        guessContainer.append(result);
         score += 10;
       } else if (currentAttempt === 3) {
+        result.textContent = `Correct! You earned 5pts.`;
+        result.style.backgroundColor = "limegreen";
+        guessContainer.append(result);
         score += 5;
       }
 
       playerScore.textContent = `score: ${score}`;
       currentAttempt = 1;
     } else {
-      alert("Incorrect try again.");
+      //   alert("Incorrect try again.");
+      result.textContent = `Inorrect! Try again`;
+      result.style.backgroundColor = "red";
+      guessContainer.append(result);
+
       guessedWord.value = "";
       attempts--;
       currentAttempt++;
@@ -176,14 +194,14 @@ function submitWord() {
 
       //show the hint for the user if the user has 1 attempts left
       if (attempts === 1) {
-        hintDiv.textContent = ` Hint: ${word_display.hint}`;
-        guessContainer.append(hintDiv);
+        result.textContent = ` Hint: ${word_display.hint}`;
+        guessContainer.append(result);
       }
 
       if (attempts === 0) {
-        alert(
-          "You have run out of attempts, please click the new word to try again"
-        );
+        result.textContent = `You have run out of attempts. Click New Word to try another word`;
+        result.style.backgroundColor = "red";
+        guessContainer.append(result);
       }
     }
   }
@@ -197,4 +215,16 @@ function anotherWord() {
   //   console.log(word_display.scrambled);
   //   console.log(word_display.word);
   scrambledWord.textContent = word_display.scrambled;
+  result.textContent = "";
+  guessContainer.append(result);
 }
+
+function whenLoaded() {
+  instruction.style.display = "block";
+  scrambledWord_display.style.display = "none";
+  btns.style.display = "none";
+  feedback.style.display = "none";
+  guessContainer.style.display = "none";
+}
+
+window.onload = whenLoaded();
