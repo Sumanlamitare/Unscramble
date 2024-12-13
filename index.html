@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Guess the Word</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="gameContainer">
+      <h2 class="title"><mark>snercubmla</mark> the word</h2>
+      <hr color="black" />
+      <div class="scarmbledWordDisplay">
+        <p class="scrambledWord">scrambled word will be displayed here</p>
+      </div>
+      <div class="guessContainer">
+        <label for="Input" id="label"> Please enter your guess here </label>
+        <input type="text" name="Guess" id="guess" minlength="4" />
+      </div>
+
+      <div class="btns">
+        <button class="actionBtns" onclick="submitWord()">Submit</button>
+        <button class="actionBtns" onclick="anotherWord()">New Word</button>
+        <button class="actionBtns">Reset</button>
+      </div>
+      <div class="feedback">
+        <p class="name">Player Name:</p>
+        <p class="score">Score:</p>
+        <p class="attempts">Attempts:</p>
+      </div>
+
+      <button id="start" onclick="startGame()">Start Game</button>
+    </div>
+
+    <script src="app.js" async defer></script>
+  </body>
+</html>

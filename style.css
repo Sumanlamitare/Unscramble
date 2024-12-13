@@ -1,0 +1,60 @@
+.gameContainer {
+  border: solid 3px red;
+  height: 50vh;
+  background-color: wheat;
+  text-align: center;
+  width: 50vw;
+  justify-self: center;
+}
+mark {
+  background-color: green;
+}
+
+hr.gradient {
+  box-shadow: 0 2px 5px red;
+}
+
+.scarmbledWordDisplay {
+  border: solid black;
+  color: white;
+  background-color: black;
+}
+.guessContainer {
+  display: inline-block;
+  margin: 1em;
+}
+#guess {
+  width: 180px;
+  height: 40px;
+  display: block;
+  margin-top: 2em;
+  /* border: solid purple; */
+}
+#label {
+  margin-top: 3em;
+  font-weight: bold;
+  text-decoration: underline overline;
+  /* color: blue; */
+}
+.actionBtns {
+  border-radius: 5px;
+  width: fit-content;
+  height: 25px;
+}
+.feedback {
+  border: solid purple;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1em;
+  /* grid-template-columns: repeat(3, 1fr); */
+}
+input {
+  border-radius: 15px;
+}
+input:focus {
+  outline: none;
+  border-color: #ccc;
+}
+input.error {
+  border: solid red;
+}
