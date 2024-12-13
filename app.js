@@ -110,14 +110,3 @@ function anotherWord() {
   //   console.log(word_display.word);
   scrambledWord.textContent = word_display.scrambled;
 }
-
-function resetGame() {
-  attempts = 0;
-  playerName = " ";
-  counter = 1;
-  score = 0;
-  playerName.textContent = `Player Name: ${playerName}`;
-  playerScore.textContent = `Score: ${score}`;
-
-  playerAttempts.textContent = `Attempts: ${attempts}`;
-}
