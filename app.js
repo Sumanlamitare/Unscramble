@@ -1,25 +1,101 @@
 //object for words
 const wordsData = {
-  word1: { scrambled: "elppa", word: "apple" },
-  word2: { scrambled: "senot", word: "stone" },
-  word3: { scrambled: "segus", word: "guess" },
-  word4: { scrambled: "seru", word: "user" },
-  word5: { scrambled: "rtfae", word: "after" },
-  word6: { scrambled: "loane", word: "alone" },
-  word7: { scrambled: "kearb", word: "break" },
-  word8: { scrambled: "rtsae", word: "stare" },
-  word9: { scrambled: "dcode", word: "coded" },
-  word10: { scrambled: "are od", word: "adore" },
-  word11: { scrambled: "rbhgit", word: "bright" },
-  word12: { scrambled: "iojnt", word: "joint" },
-  word13: { scrambled: "leastpn", word: "planets" },
-  word14: { scrambled: "knraf", word: "frank" },
-  word15: { scrambled: "maerc", word: "cream" },
-  word16: { scrambled: "plaer", word: "pearl" },
-  word17: { scrambled: "tsrop", word: "sport" },
-  word18: { scrambled: "elbam", word: "blame" },
-  word19: { scrambled: "eyonm", word: "money" },
-  word20: { scrambled: "siveom", word: "movies" },
+  word1: {
+    scrambled: "elppa",
+    word: "apple",
+    hint: "A popular fruit that keeps the doctor away",
+  },
+  word2: {
+    scrambled: "senot",
+    word: "stone",
+    hint: "A hard, solid, nonmetallic mineral matter",
+  },
+  word3: {
+    scrambled: "segus",
+    word: "guess",
+    hint: "To make an estimate without sufficient evidence",
+  },
+  word4: {
+    scrambled: "seru",
+    word: "user",
+    hint: "Someone who utilizes a service or product",
+  },
+  word5: { scrambled: "rtfae", word: "after", hint: "Opposite of before" },
+  word6: {
+    scrambled: "loane",
+    word: "alone",
+    hint: "Without anyone else present",
+  },
+  word7: {
+    scrambled: "kearb",
+    word: "break",
+    hint: "To separate into pieces or cause to stop functioning",
+  },
+  word8: {
+    scrambled: "rtsae",
+    word: "stare",
+    hint: "To look fixedly at something for a long time",
+  },
+  word9: {
+    scrambled: "dcode",
+    word: "coded",
+    hint: "Something encoded or in secret form",
+  },
+  word10: {
+    scrambled: "are od",
+    word: "adore",
+    hint: "To regard with deep affection or love",
+  },
+  word11: {
+    scrambled: "rbhgit",
+    word: "bright",
+    hint: "Emitting or reflecting a lot of light",
+  },
+  word12: {
+    scrambled: "iojnt",
+    word: "joint",
+    hint: "Where two parts or objects are connected",
+  },
+  word13: {
+    scrambled: "leastpn",
+    word: "planets",
+    hint: "Celestial bodies that orbit stars",
+  },
+  word14: {
+    scrambled: "knraf",
+    word: "frank",
+    hint: "Open, direct, and sincere in speech or expression",
+  },
+  word15: {
+    scrambled: "maerc",
+    word: "cream",
+    hint: "A rich dairy product used in desserts",
+  },
+  word16: {
+    scrambled: "plaer",
+    word: "pearl",
+    hint: "A precious, smooth gem found inside oysters",
+  },
+  word17: {
+    scrambled: "tsrop",
+    word: "sport",
+    hint: "A physical activity involving competition",
+  },
+  word18: {
+    scrambled: "elbam",
+    word: "blame",
+    hint: "To assign responsibility for a fault or wrong",
+  },
+  word19: {
+    scrambled: "eyonm",
+    word: "money",
+    hint: "A medium of exchange in transactions",
+  },
+  word20: {
+    scrambled: "siveom",
+    word: "movies",
+    hint: "Films shown in theaters or on screens",
+  },
 };
 
 //get the elements
@@ -29,6 +105,12 @@ let playerName = document.querySelector(".name");
 let playerScore = document.querySelector(".score");
 let playerAttempts = document.querySelector(".attempts");
 let startBtn = document.querySelector("#start");
+
+let guessContainer = document.querySelector(".guessContainer");
+
+//Create an element to display hint for the user
+let hintDiv = document.createElement("div");
+hintDiv.classList.add("hint");
 
 //required variables
 let player_name = "player";
@@ -91,6 +173,12 @@ function submitWord() {
       attempts--;
       currentAttempt++;
       playerAttempts.textContent = `Attempts: ${attempts}`;
+
+      //show the hint for the user if the user has 1 attempts left
+      if (attempts === 1) {
+        hintDiv.textContent = ` Hint: ${word_display.hint}`;
+        guessContainer.append(hintDiv);
+      }
 
       if (attempts === 0) {
         alert(

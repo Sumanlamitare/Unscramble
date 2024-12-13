@@ -58,3 +58,9 @@ input:focus {
 input.error {
   border: solid red;
 }
+.hint {
+  margin-top: 1em;
+  color: black;
+  font-size: 10px;
+  font-family: fantasy;
+}
