@@ -5,6 +5,7 @@
   text-align: center;
   width: 50vw;
   justify-self: center;
+  display: block;
 }
 mark {
   background-color: green;

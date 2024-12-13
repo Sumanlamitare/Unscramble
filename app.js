@@ -157,6 +157,13 @@ function startGame() {
   playerAttempts.textContent = `Attempts: ${attempts}`;
   //  word_display = getRandomWord(wordsData);
   scrambledWord.textContent = word_display.scrambled;
+
+  //Load the correct divs after the start game is clicked
+  instruction.style.display = "none";
+  scrambledWord_display.style.display = "block";
+  btns.style.display = "block";
+  feedback.style.display = "flex";
+  guessContainer.style.display = "inline-block";
 }
 
 function submitWord() {
