@@ -39,7 +39,7 @@ hr.gradient {
 }
 .actionBtns {
   border-radius: 5px;
-  width: fit-content;
+  width: 100px;
   height: 25px;
 }
 .feedback {
