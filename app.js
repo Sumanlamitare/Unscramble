@@ -96,11 +96,161 @@ const wordsData = {
     word: "movies",
     hint: "Films shown in theaters or on screens",
   },
+  word21: {
+    scrambled: "nagroe",
+    word: "orange",
+    hint: "A citrus fruit with a tangy taste",
+  },
+  word22: {
+    scrambled: "sokbo",
+    word: "books",
+    hint: "Collections of written words or pictures",
+  },
+  word23: {
+    scrambled: "erhcom",
+    word: "chrome",
+    hint: "A shiny metal often used in plating",
+  },
+  word24: {
+    scrambled: "perapa",
+    word: "appear",
+    hint: "To become visible or noticeable",
+  },
+  word25: {
+    scrambled: "ngilesep",
+    word: "sleeping",
+    hint: "The state of resting or being asleep",
+  },
+  word26: {
+    scrambled: "krcatkcab",
+    word: "backtrack",
+    hint: "To retrace your steps or actions",
+  },
+  word27: {
+    scrambled: "grsfine",
+    word: "fingers",
+    hint: "Digits of the hand used for grasping",
+  },
+  word28: {
+    scrambled: "croergnid",
+    word: "recording",
+    hint: "The act of capturing sound or video",
+  },
+  word29: {
+    scrambled: "ntouivloe",
+    word: "evolution",
+    hint: "The gradual development of something",
+  },
+  word30: {
+    scrambled: "rstwrie",
+    word: "writers",
+    hint: "People who create written works",
+  },
+  word31: {
+    scrambled: "reviled",
+    word: "deliver",
+    hint: "To bring something to a person or place",
+  },
+  word32: {
+    scrambled: "gmoniv",
+    word: "moving",
+    hint: "Changing position or location",
+  },
+  word33: {
+    scrambled: "esreuc",
+    word: "secure",
+    hint: "To make safe or protect from danger",
+  },
+  word34: {
+    scrambled: "emplis",
+    word: "simple",
+    hint: "Not complicated or difficult to understand",
+  },
+  word35: {
+    scrambled: "loohcs",
+    word: "school",
+    hint: "A place for learning and education",
+  },
+  word36: {
+    scrambled: "poeple",
+    word: "people",
+    hint: "Humans in general or a group of individuals",
+  },
+  word37: {
+    scrambled: "allpep",
+    word: "apple",
+    hint: "Bill Gates",
+  },
+  word38: {
+    scrambled: "gniod",
+    word: "doing",
+    hint: "Performing an action or task",
+  },
+  word39: {
+    scrambled: "denip",
+    word: "pined",
+    hint: "To feel deep sorrow or regret",
+  },
+  word40: {
+    scrambled: "slpae",
+    word: "leaps",
+    hint: "To jump over something",
+  },
+  word41: {
+    scrambled: "sernotica",
+    word: "reactions",
+    hint: "Responses to certain stimuli or events",
+  },
+  word42: {
+    scrambled: "redinrem",
+    word: "reminder",
+    hint: "A thing that helps you remember something",
+  },
+  word43: {
+    scrambled: "sftihs",
+    word: "shifts",
+    hint: "Changes in position or direction",
+  },
+  word44: {
+    scrambled: "lrteia",
+    word: "retail",
+    hint: "The sale of goods in small quantities",
+  },
+  word45: {
+    scrambled: "gnitnirp",
+    word: "printing",
+    hint: "The process of producing text or images on paper",
+  },
+  word46: {
+    scrambled: "pecernestis",
+    word: "persistence",
+    hint: "The ability to keep going despite difficulties",
+  },
+  word47: {
+    scrambled: "taincer",
+    word: "certain",
+    hint: "Without doubt, sure to happen",
+  },
+  word48: {
+    scrambled: "witnol",
+    word: "wilton",
+    hint: "A famous type of woven fabric",
+  },
+  word49: {
+    scrambled: "sdite",
+    word: "stied",
+    hint: "A type of knot used for binding",
+  },
+  word50: {
+    scrambled: "gniniktt",
+    word: "knitting",
+    hint: "The process of making fabric using yarn",
+  },
 };
 
 //get the elements
 let scrambledWord = document.querySelector(".scrambledWord");
-let guessedWord = document.querySelector("#guess");
+let guessedWord = document.getElementById("guess");
 let playerName = document.querySelector(".name");
 let playerScore = document.querySelector(".score");
 let playerAttempts = document.querySelector(".attempts");

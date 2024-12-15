@@ -1,9 +1,3 @@
-@media (min-width: 860px) {
-  .gameContainer {
-    height: 70%;
-  }
-}
-
 .gameContainer {
   border: solid 3px red;
   height: 50vh;
