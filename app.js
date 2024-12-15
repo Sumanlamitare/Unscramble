@@ -327,19 +327,16 @@ function submitWord() {
       if (currentAttempt === 1) {
         result.textContent = `Correct! You earned 15pts.`;
         guessedWord.style.backgroundColor = "green";
-        result.style.backgroundColor = "limegreen";
         guessContainer.append(result);
         score += 15;
       } else if (currentAttempt === 2) {
         result.textContent = `Correct! You earned 10pts.`;
-        result.style.backgroundColor = "limegreen";
         guessedWord.style.backgroundColor = "green";
         guessContainer.append(result);
         score += 10;
       } else if (currentAttempt === 3) {
         result.textContent = `Correct! You earned 5pts.`;
         guessedWord.style.backgroundColor = "green";
-        result.style.backgroundColor = "limegreen";
         guessContainer.append(result);
         score += 5;
       }
@@ -349,7 +346,6 @@ function submitWord() {
     } else {
       //   alert("Incorrect try again.");
       result.textContent = `Inorrect! Try again`;
-      result.style.backgroundColor = "red";
       guessContainer.append(result);
       guessedWord.style.backgroundColor = "red";
 
