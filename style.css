@@ -1,9 +1,9 @@
 .gameContainer {
-  border: solid 3px red;
+  border: solid 5px red;
   height: 50vh;
   background-color: wheat;
   text-align: center;
-  width: 50vw;
+  width: 60vw;
   justify-self: center;
   display: block;
 }
