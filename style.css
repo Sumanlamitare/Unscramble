@@ -19,6 +19,7 @@ hr.gradient {
   border: solid black;
   color: white;
   background-color: black;
+  font-size: 20px;
 }
 .guessContainer {
   display: inline-block;
@@ -28,7 +29,7 @@ hr.gradient {
   width: 180px;
   height: 40px;
   display: block;
-  margin-top: 2em;
+  margin-top: 1em;
   /* border: solid purple; */
 }
 #label {
@@ -47,6 +48,7 @@ hr.gradient {
   display: flex;
   justify-content: space-evenly;
   margin: 1em;
+  font-weight: bold;
   /* grid-template-columns: repeat(3, 1fr); */
 }
 input {
