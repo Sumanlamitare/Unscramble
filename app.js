@@ -254,6 +254,9 @@ function reset() {
     alert(`Thank you for playig. Your score was: ${score}`);
     whenLoaded();
     startBtn.style.display = "inline-block";
+    score = 0;
+    attempts = 3;
+    currentAttempt = 1;
   }
 }
 
